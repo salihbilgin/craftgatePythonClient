@@ -1,7 +1,7 @@
 from django.db import models
 
 
-class Payments(BaseModel):
+class Payments(models.Model):
     craftgatePaymentId = models.CharField(max_length=32)
     createdDate = models.DateTimeField(null=True, blank=True)
     price = models.FloatField(null=True, blank=True)
@@ -42,7 +42,7 @@ class Payments(BaseModel):
         verbose_name_plural = 'payments'
 
 
-class CardStore(BaseModel):
+class CardStore(models.Model):
     memberUserId = models.IntegerField(null=True, blank=True)  # Local User Id
     cardUserKey = models.CharField(max_length=64, null=True, blank=True)  # CraftGate User Id
     cardToken = models.CharField(max_length=64, null=True)
